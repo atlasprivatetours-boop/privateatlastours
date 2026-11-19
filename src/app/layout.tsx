@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import JsonLd from "@/components/JsonLd";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE } from "@/lib/site";
 import { joinCities, origins } from "@/lib/content";
 import { orgSchema, websiteSchema } from "@/lib/schema";
@@ -33,6 +35,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main">{children}</main>
         <Footer />
         <BackToTop />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
